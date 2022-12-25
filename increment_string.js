@@ -1,23 +1,36 @@
 function incrementString (strng) {
-    // Get the alphabets in the string
-    let strAlpha = strng.replace(/[0-9]/g, '');
+    // Factor out the number at the end of string
+    let count = strng.match(/\d*$/);
 
-    // Track the lenght of string
-    let length = strng.length - strAlpha.length;
-
-    // Get numbers in str
-    let numbers = strng.slice(strAlpha.length) || '0'
-
-    numbers = (parseInt(numbers) + 1).toString()
-
-    
-    while(numbers.length < length){
-        numbers = '0' + numbers
+    // Check if there's a number at the end of the string if not add zero to the back of string
+    if(count[0]){
+        count[0]
+    } else{
+        strng += "0"; count[0] =  '0';
     }
-    
-    strAlpha = strAlpha.concat(numbers);
-    console.log(strAlpha);
 
+    // tracks the length of the Alphabets in string
+    let length = strng.length - count[0].length
+    // Factor out the alphabet in string
+    let string = strng.slice(0, length)
+    // Add one to count and convert to string
+    let result = (parseInt(count[0]) + 1).toString()
+
+    // Makes sure 000 is not converted to 0 and add the zeros to back of string
+    while(count[0].length > result.length) {
+        result = "0" + result
+    }
+
+    return string.concat(result)
+    
 }
 
-incrementString('fooo009')
+incrementString('foo')
+incrementString('foobar000')
+incrementString('foobar999')
+incrementString('foobar00999')
+incrementString('foobar001')
+incrementString('foobar1')
+incrementString('1')
+incrementString('009')
+incrementString('fo99obar99')
