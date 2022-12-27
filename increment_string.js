@@ -8,7 +8,6 @@ function incrementString (strng) {
     } else{
         strng += "0"; count[0] =  '0';
     }
-
     // tracks the length of the Alphabets in string
     let length = strng.length - count[0].length
     // Factor out the alphabet in string
