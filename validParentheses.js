@@ -7,9 +7,3 @@ const validParentheses = (parens) => {
 
     return n === 0
 }
-
-console.log(validParentheses("("));
-console.log(validParentheses(")"));
-console.log(validParentheses(""));
-console.log(validParentheses("()"));
-console.log(validParentheses("())"));

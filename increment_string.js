@@ -23,13 +23,3 @@ function incrementString (strng) {
     return string.concat(result)
     
 }
-
-incrementString('foo')
-incrementString('foobar000')
-incrementString('foobar999')
-incrementString('foobar00999')
-incrementString('foobar001')
-incrementString('foobar1')
-incrementString('1')
-incrementString('009')
-incrementString('fo99obar99')

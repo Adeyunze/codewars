@@ -7,4 +7,3 @@ function count (string) {
 
     return result
 }
-count("")
